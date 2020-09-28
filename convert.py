@@ -34,6 +34,15 @@ def convert(string, company):
     email3 += company
     email3 += '.com'
 
+    # firstlast_initial@company.com
+    email5 = ''
+    arr5 = string.split(' ')
+    email5 += arr5[0]
+    email5 += arr5[1][0]
+    email5 += '@'
+    email5 += company
+    email5 += '.com'
+
     # last@company.com
     email4 = ''
     arr4 = string.split(' ')
@@ -42,7 +51,7 @@ def convert(string, company):
     email4 += company
     email4 += '.com'
 
-    return email1, email3, email4, email2
+    return email1, email3, email4, email5, email2
 
 print(convert('Jane Doe', 'amazon'))
 print(convert('John Doe', 'amazon'))
