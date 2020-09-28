@@ -1,7 +1,13 @@
 def convert(string, company):
+    # clean the input string
+    string = string.lower()
+
+    # test to see if input is valid
+    if len(string.split(' ')) != 2:
+        return 'string not properly formatted'
+
     # firstlast@company.com
     email1 = ''
-    string = string.lower()
     arr1 = string.split(' ')
     for part in arr1:
         email1 += part
@@ -19,8 +25,24 @@ def convert(string, company):
     email2 += company
     email2 += '.com'
 
-    return email1, email2
+    # lastfirst_initial@company.com
+    email3 = ''
+    arr3 = string.split(' ')
+    email3 += arr3[1]
+    email3 += arr3[0][0]
+    email3 += '@'
+    email3 += company
+    email3 += '.com'
 
-print(convert('Iron Man', 'avenger'))
-print(convert('Captain America', 'avenger'))
-print(convert('Black Widow', 'avenger'))
+    # last@company.com
+    email4 = ''
+    arr4 = string.split(' ')
+    email4 += arr4[1]
+    email4 += '@'
+    email4 += company
+    email4 += '.com'
+
+    return email1, email3, email4, email2
+
+print(convert('Jane Doe', 'amazon'))
+print(convert('John Doe', 'amazon'))
