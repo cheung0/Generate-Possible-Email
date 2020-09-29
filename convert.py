@@ -53,5 +53,5 @@ def convert(string, company):
 
     return email1, email3, email4, email5, email2
 
-print(convert('Jane Doe', 'amazon'))
-print(convert('John Doe', 'amazon'))
+print(convert('Black Widow', 'avenger'))
+print(convert('Iron Man', 'avenger'))
